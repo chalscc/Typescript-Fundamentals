@@ -29,6 +29,8 @@ console.log('Song: ', anotherSong);
 console.log('Author: ', author);
 console.log('Year: ', year);
 
+const [p1, p2, trunks = 'Not found']: string[] = ['Goku', 'Vegeta'];
 
+console.log('Personaje 1', trunks);
 
 export{};
