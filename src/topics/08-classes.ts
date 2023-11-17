@@ -2,18 +2,15 @@
 
 
 export class Person {
-    public name:string;
-    private address: string;
 
-
-    constructor() {
-        this.name = 'Carles'
-        this.address = 'Ollería'
-    }
+    constructor( 
+        public name: string, 
+        private address: string
+        ) {}
 
 }
 
 
-const ironman = new Person();
+const ironman = new Person('Carles', 'Olleria');
 
 console.log(ironman);
