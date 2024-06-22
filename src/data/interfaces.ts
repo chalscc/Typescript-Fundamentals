@@ -6,3 +6,11 @@ export interface ILoTR {
     habilidades: string[];
     malvado: boolean;
 }
+
+export interface IStarWars {
+    nombre: string;
+    raza: string;
+    edad: number | "Desconocida";
+    genero: string;
+    habilidades: string[];
+}

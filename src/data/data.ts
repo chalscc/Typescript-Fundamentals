@@ -1,4 +1,4 @@
-import { ILoTR } from "./interfaces";
+import { ILoTR, IStarWars } from "./interfaces";
 
 export const LoTR: ILoTR[] = [
   {
@@ -83,7 +83,7 @@ export const LoTR: ILoTR[] = [
     }
   ];
 
-  export const StarWars = [
+  export const StarWars: IStarWars[] = [
     {
         nombre: "Luke Skywalker",
         raza: "Humano",
@@ -156,4 +156,4 @@ export const LoTR: ILoTR[] = [
     }
 ]
 
-export const Characters = [LoTR, StarWars]
+export const Characters: [ILoTR[], IStarWars[]] = [LoTR, StarWars]
