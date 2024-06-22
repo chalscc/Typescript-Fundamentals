@@ -1,4 +1,4 @@
-import { ILoTR, IStarWars, RazasLoTR } from "./interfaces";
+import { ICoches, ILoTR, IMotos, IStarWars, RazasLoTR } from "./interfaces";
 
 export const LoTR: ILoTR[] = [
   {
@@ -150,9 +150,42 @@ export const LoTR: ILoTR[] = [
     {
         nombre: "R2-D2",
         raza: "Droide Astromecánico",
-        edad: "Desconocida",
+        edad: 999,
         genero: "Masculino",
         habilidades: ["Hacker", "Ingeniería", "Pilotaje"]
     }
+];
+
+export const Motos: IMotos[] = [
+  {
+      "marca": "Honda",
+      "modelo": "CBR500R",
+      "ano": 2022,
+      "cilindrada": 471,
+      "color": "Rojo"
+  },
+  {
+      "marca": "Yamaha",
+      "modelo": "MT-07",
+      "ano": 2021,
+      "cilindrada": 689,
+      "color": "Azul"
+  }
 ]
 
+export const Coches: ICoches[] = [
+  {
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "ano": 2023,
+      "motor": "1.8 Híbrido",
+      "color": "Blanco"
+  },
+  {
+      "marca": "Tesla",
+      "modelo": "Model 3",
+      "ano": 2022,
+      "motor": "Eléctrico",
+      "color": "Negro"
+  }
+]
