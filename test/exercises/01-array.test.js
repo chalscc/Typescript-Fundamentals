@@ -1,11 +1,13 @@
-describe('Test sobre <CounterApp/>', () => { 
+import { StarWars } from '../../src/data/data';
+import { exercise1 } from '../../src/exercises/array';
 
-    const initialValue = 100;
+describe('Ejercicios de Array', () => { 
 
-    test('Test 1', () => { 
+    test('Ejercicio 1: Haz que la función devuelva el primer elemento del array StarWars que con género masculino.', () => { 
         
-        expect(initialValue).toBe(100);
+      const result = StarWars.find((character) => character.genero === 'Masculino');      
 
+      expect(exercise1()).toEqual(result);
      })
 
  })
