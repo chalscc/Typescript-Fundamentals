@@ -1,8 +1,20 @@
+export const enum RazasLoTR {
+    Hobbit = "Hobbit",
+    Istar = "Istar (Mago)",
+    Ainur = "Ainur (Maia)",
+    MedioElfo = "Medio Elfo",
+    ElfoNoldor = "Elfo Noldor",
+    Dunedain = "Dúnedain (Humano)",
+    ElfoSindar = "Elfo Sindar",
+    Enano = "Enano",
+    Humano = "Humano"
+}
+
 export interface ILoTR {
     nombre: string;
-    raza: string;
+    raza: RazasLoTR,
     edad: number | "Desconocida";
-    genero: string;
+    genero: "Masculino" | "Femenino";
     habilidades: string[];
     malvado: boolean;
 }

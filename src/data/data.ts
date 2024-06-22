@@ -1,9 +1,9 @@
-import { ILoTR, IStarWars } from "./interfaces";
+import { ILoTR, IStarWars, RazasLoTR } from "./interfaces";
 
 export const LoTR: ILoTR[] = [
   {
         nombre: "Frodo Bolsón",
-        raza: "Hobbit",
+        raza: RazasLoTR.Hobbit,
         edad: 50,
         genero: "Masculino",
         habilidades: ["Valentía", "Resistencia", "Lealtad"],
@@ -11,7 +11,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Gandalf el Gris",
-        raza: "Istar (Mago)",
+        raza: RazasLoTR.Istar,
         edad: "Desconocida",
         genero: "Masculino",
         habilidades: ["Magia", "Sabiduría", "Liderazgo"],
@@ -19,7 +19,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Aragorn",
-        raza: "Dúnedain (Humano)",
+        raza: RazasLoTR.Dunedain,
         edad: 87,
         genero: "Masculino",
         habilidades: ["Espadachín", "Rastreador", "Liderazgo"],
@@ -27,7 +27,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Legolas",
-        raza: "Elfo Sindar",
+        raza: RazasLoTR.ElfoSindar,
         edad: "Desconocida",
         genero: "Masculino",
         habilidades: ["Arquería", "Agilidad", "Visión Aguda"],
@@ -35,7 +35,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Gimli",
-        raza: "Enano",
+        raza: RazasLoTR.Enano,
         edad: 140,
         genero: "Masculino",
         habilidades: ["Hacha de Combate", "Resistencia", "Minería"],
@@ -43,7 +43,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Samwise Gamgee",
-        raza: "Hobbit",
+        raza: RazasLoTR.Hobbit,
         edad: 38,
         genero: "Masculino",
         habilidades: ["Lealtad", "Jardinería", "Valentía"],
@@ -51,7 +51,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Boromir",
-        raza: "Humano",
+        raza: RazasLoTR.Humano,
         edad: 40,
         genero: "Masculino",
         habilidades: ["Espadachín", "Tácticas Militares", "Liderazgo"],
@@ -59,7 +59,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Galadriel",
-        raza: "Elfo Noldor",
+        raza: RazasLoTR.ElfoNoldor,
         edad: "Desconocida",
         genero: "Femenino",
         habilidades: ["Magia", "Sabiduría", "Clarividencia"],
@@ -67,7 +67,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Elrond",
-        raza: "Medio Elfo",
+        raza: RazasLoTR.MedioElfo,
         edad: "Desconocida",
         genero: "Masculino",
         habilidades: ["Curación", "Sabiduría", "Liderazgo"],
@@ -75,7 +75,7 @@ export const LoTR: ILoTR[] = [
     },
     {
         nombre: "Sauron",
-        raza: "Ainur (Maia)",
+        raza: RazasLoTR.Ainur,
         edad: "Desconocida",
         genero: "Masculino",
         habilidades: ["Magia Oscura", "Manipulación", "Invulnerabilidad"],
