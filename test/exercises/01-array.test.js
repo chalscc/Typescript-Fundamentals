@@ -1,6 +1,6 @@
 import { StarWars, LoTR, Motos, Coches } from '../../src/data/data';
 import { RazasLoTR } from '../../src/data/interfaces';
-import { exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9 } from '../../src/exercises/array';
+import { exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9 } from '../../src/exercises/01-array';
 
 const result1 = StarWars.find((character) => character.genero === 'Masculino' && character.edad < 20);
 const result2 = LoTR.every((character) => character.malvado);
