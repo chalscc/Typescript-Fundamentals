@@ -1,5 +1,6 @@
 module.exports = {  
     // TODO: jsdom,
     testEnvironment: 'jest-environment-jsdom',
-    setupFiles: ['./jest.setup.js']
+    setupFiles: ['./jest.setup.js'],
+    setupFilesAfterEnv: ['./customMatcher.js'],
 }

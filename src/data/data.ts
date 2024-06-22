@@ -1,4 +1,6 @@
-export const LoTR = [
+import { ILoTR } from "./interfaces";
+
+export const LoTR: ILoTR[] = [
   {
         nombre: "Frodo Bolsón",
         raza: "Hobbit",
