@@ -156,4 +156,3 @@ export const LoTR: ILoTR[] = [
     }
 ]
 
-export const Characters: [ILoTR[], IStarWars[]] = [LoTR, StarWars]

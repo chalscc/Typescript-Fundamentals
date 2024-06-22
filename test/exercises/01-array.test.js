@@ -1,11 +1,16 @@
 import { StarWars, LoTR } from '../../src/data/data';
 import { RazasLoTR } from '../../src/data/interfaces';
-import { exercise1, exercise2, exercise3, exercise4 } from '../../src/exercises/array';
+import { exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9 } from '../../src/exercises/array';
 
 const result1 = StarWars.find((character) => character.genero === 'Masculino');
 const result2 = StarWars.every((character) => character.malvado);
 const result3 = LoTR.some((character) => character.raza === RazasLoTR.Hobbit);
 const result4 = LoTR.filter((character) => !character.malvado);
+const result5 = StarWars.sort((a, b) => a.edad - b.edad)
+const result6 = StarWars.sort((a, b) => a.edad - b.edad).reverse();
+const result7 = LoTR.map((character) => ( { ...character, edad: 666 }));
+const result8 = [].concat(StarWars, LoTR);
+const result9 = [...StarWars, ...LoTR];
 
 describe('Ejercicios de Array', () => { 
 
@@ -23,5 +28,25 @@ describe('Ejercicios de Array', () => {
 
   test('Ejercicio 4: Devuelve un array con todos los personajes de LoTR que no malvados.', () => {
     expect(exercise4()).toEqualCustom(result4);
+  });
+
+  test('Ejercicio 5: Devuelve el array de StarWars ordenado por edad ASCENDENTE. Usa un metodo de array.', () => {
+    expect(exercise5()).toEqualCustom(result5);
+  });
+
+  test('Ejercicio 6: Devuelve el array de StarWars ordenado por nombre DESCENDENTE. Usa un metodo de array.', () => {
+    expect(exercise6()).toEqualCustom(result6);
+  });
+
+  test('Ejercicio 7: Devuelve el array de LoTR, pero ahora todos tendran edad: 666. Usa un metodo de array.', () => {
+    expect(exercise7()).toEqualCustom(result7);
+  });
+
+  test('Ejercicio 8: Devuelve un único array con todos los personajes de LoTR y StarWars. Usa un metodo de array sobre Characters.', () => {
+    expect(exercise8()).toEqualCustom(result8);
+  });
+
+  test('Ejercicio 9: Devuelve un único array con todos los personajes de LoTR y StarWars. Usa el operador spread.', () => {
+    expect(exercise9()).toEqualCustom(result9);
   });
 });
