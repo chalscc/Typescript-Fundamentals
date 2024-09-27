@@ -15,7 +15,7 @@ const result9 = [...Motos, ...Coches];
 describe('Ejercicios de Array', () => { 
 
   test('Ejercicio 1: Haz que la función devuelva el primer elemento del array StarWars con género masculino.', () => {         
-    expect(exercise1()).toEqualCustom('Test');
+    expect(exercise1()).toEqualCustom(result1);
   });
 
   test('Ejercicio 2: Son todos los personajes de LoTR malvados? Devuelve un booleano.', () => {

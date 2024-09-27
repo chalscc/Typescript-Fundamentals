@@ -1,5 +1,3 @@
 #!/bin/bash
 
-echo "TEST"
-
 npm run test
