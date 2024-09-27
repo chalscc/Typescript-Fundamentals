@@ -41,3 +41,7 @@ export interface IMotos extends IVehiculo {
 export interface ICoches extends IVehiculo {
   motor: string;
 }
+
+export interface Test {
+  test: string;
+}
