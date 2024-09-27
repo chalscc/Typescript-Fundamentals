@@ -43,5 +43,5 @@ export interface ICoches extends IVehiculo {
 }
 
 export interface Test {
-  test: string;
+  test: number;
 }
