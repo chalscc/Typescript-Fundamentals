@@ -50,8 +50,7 @@ echo "BRANCH_NAME: $BRANCH_NAME"
 echo "BRANCH_ID: $BRANCH_ID"
 
 # Only modify the commit message if all conditions are met
-if [ -n "$BRANCH_NAME" ] && ! [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ] && \
-! [ "$(is_branch_in_commit_msg "$BRANCH_ID")" -eq 1 ]; then
+if [ -n "$BRANCH_NAME" ] && ! [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ]; then
   echo "Modifying commit message..."
   sed -i'.bak' -e "1s~^~${BRANCH_ID} ~" "$COMMIT_MSG_FILE"
 else
