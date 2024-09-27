@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo "$(dirname)"
+echo "$0"
 . "$(dirname -- "$0")/_/husky.sh"
 
 message="$(cat $1)"
