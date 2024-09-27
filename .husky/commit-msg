@@ -4,3 +4,5 @@
 commit_message="$(cat "$1") --- $(cat "$1")"
 
 echo $commit_message
+
+exit 1
