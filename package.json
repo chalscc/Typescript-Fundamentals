@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",
     "@types/jest": "^29.5.10",
     "babel-jest": "^29.7.0",
+    "husky": "^9.1.6",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "typescript": "^5.2.2",
