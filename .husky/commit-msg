@@ -1,7 +1,8 @@
 #!/bin/bash
 
 message="$(cat $1)"
-requiredPattern="^(add|cut|fix|bump|make|start|stop|refactor|reformat|optimise|document|merge|test) .*$"
+requiredPattern="^\[TEST-[0-9]+\] .*$"
+
 if ! [[ $message =~ $requiredPattern ]];
 then
   echo "-"
