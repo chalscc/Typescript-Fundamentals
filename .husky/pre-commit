@@ -40,3 +40,4 @@ if ! is_branch_in_list "$BRANCH_TYPE" "${ALLOWED_BRANCHES[@]}"; then
 fi
 
 npm run test
+#
