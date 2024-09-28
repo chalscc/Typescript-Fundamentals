@@ -21,19 +21,20 @@ fi
 # Get the current branch name
 BRANCH_NAME="$(git symbolic-ref --short HEAD)"
 
-# Extract TEST-<number> pattern from the branch name, if exists
-BRANCH_ID="$(echo "$BRANCH_NAME" | sed -n 's/.*\(TEST-[0-9]\+\).*/[\1]/p')"
-
+# Function to check if the commit is being done on a valid branch
 if [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ]; then
   echo "No valid branch to commit: $BRANCH_NAME";
 
   exit 0;
 fi
 
+# Extract TEST-<number> pattern from the branch name, if exists
+BRANCH_ID="$(echo "$BRANCH_NAME" | sed -n 's/.*\(TEST-[0-9]\+\).*/[\1]/p')"
+
 # Ensure BRANCH_ID is not empty before continuing
 if [ -z "$BRANCH_ID" ]; then
-  echo "No valid BRANCH_ID found in branch name: $BRANCH_NAME"
-  echo "Branch name must contain feature|bugfix|epic/TEST-{number}"
+  echo "No valid BRANCH_ID found in branch: $BRANCH_NAME"
+  echo "Branch name must contain {feature|bugfix|epic}/TEST-{number}"
   
   exit 0  # Exit if no BRANCH_ID is found
 fi
@@ -42,6 +43,6 @@ fi
 BRANCH_NAME="${BRANCH_NAME##*/}"
 
 # Only modify the commit message if all conditions are met
-if [ -n "$BRANCH_NAME" ] && ! [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ]; then
+if [ -n "$BRANCH_NAME" ]; then
   sed -i'.bak' -e "1s~^~${BRANCH_ID} ~" "$COMMIT_MSG_FILE"
 fi
