@@ -40,10 +40,19 @@ is_branch_in_commit_msg() {
     echo "Commit message file does not exist."
     return 1
   fi
-  
+
   # Check if the first line contains the BRANCH_ID
-  head -1 "$COMMIT_MSG_FILE" | grep -c --regexp="^${1}.*$"
+  if head -1 "$COMMIT_MSG_FILE" | grep -q "^${1}"; then
+    return 0  # Branch ID is found
+  else
+    return 1  # Branch ID is not found
+  fi
 }
+
+if is_branch_in_commit_msg "$BRANCH_ID"; then
+  echo "Branch ID ${BRANCH_ID} is already in the commit message."
+  exit 1  # Exit with status 1 if the branch ID is found
+fi
 
 # Only modify the commit message if all conditions are met
 if [ -n "$BRANCH_NAME" ] && ! [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ]; then
