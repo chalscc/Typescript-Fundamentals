@@ -15,13 +15,7 @@ if [ -z "$BRANCH_ID" ]; then
   exit 0  # Exit if no BRANCH_ID is found
 fi
 
-# Check if the commit message already contains BRANCH_ID
-if grep -q "$BRANCH_ID" "$COMMIT_MSG_FILE"; then
-  echo "Commit message already contains BRANCH_ID: $BRANCH_ID"
-  exit 0  # Exit without modifying the commit message
-fi
-
-# Only modify the commit message if BRANCH_ID is not found
+# Only modify the commit message if all conditions are met
 if [ -n "$BRANCH_ID" ]; then
   sed -i'.bak' -e "1s~^~${BRANCH_ID} ~" "$COMMIT_MSG_FILE"
 fi
