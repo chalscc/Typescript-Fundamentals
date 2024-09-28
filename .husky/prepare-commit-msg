@@ -49,3 +49,27 @@ is_branch_in_commit_msg() {
 if [ -n "$BRANCH_NAME" ] && ! [ "$(is_branch_excluded "$BRANCH_NAME")" -eq 1 ]; then
   sed -i'.bak' -e "1s~^~${BRANCH_ID} ~" "$COMMIT_MSG_FILE"
 fi
+
+# # Function to check if the branch ID is already in the commit message
+# is_branch_in_commit_msg() {
+#   # Ensure we have a valid commit message file
+#   if [ ! -f "$COMMIT_MSG_FILE" ]; then
+#     echo "Commit message file does not exist."
+#     return 1
+#   fi
+
+#   # Check if the first line contains the BRANCH_ID
+#   if head -1 "$COMMIT_MSG_FILE" | grep -q "^${1}"; then
+#     return 0  # Branch ID is present
+#   else
+#     return 1  # Branch ID is not present
+#   fi
+# }
+
+# # Only modify the commit message if all conditions are met
+# if [ -n "$BRANCH_NAME" ] && ! is_branch_excluded "$BRANCH_NAME"; then
+#   if ! is_branch_in_commit_msg "$BRANCH_ID"; then
+#     # Prepend BRANCH_ID to the first line of the commit message
+#     sed -i'.bak' -e "1s~^~${BRANCH_ID} ~" "$COMMIT_MSG_FILE"
+#   fi
+# fi
