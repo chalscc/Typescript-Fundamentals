@@ -27,6 +27,7 @@ BRANCH_NAME="$(git symbolic-ref --short HEAD)"
 
 # Check if the branch is in the excluded list
 if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
+  echo "-"
   echo "No commits are allowed on excluded branch: $BRANCH_NAME"
   exit 0
 fi

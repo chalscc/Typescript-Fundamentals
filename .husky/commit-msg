@@ -6,8 +6,7 @@ requiredPattern="^\[TEST-[0-9]+\] .*$"
 if ! [[ $message =~ $requiredPattern ]];
 then
   echo "-"
-  echo "The commit message must have this format: [TEST-{number}]"
-  echo "Example: [TEST-264] New formula implemented"
+  echo "The commit message must have the following format: [TEST-{number}] Implementation message"
   echo "-"
   echo "Your commit message was:"
   echo $message
