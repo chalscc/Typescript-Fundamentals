@@ -10,7 +10,7 @@ BRANCH_ID="$(echo "$BRANCH_NAME" | sed -n 's/.*\(TEST-[0-9]\+\).*/[\1]/p')"
 BRANCH_TYPE="$(echo "$BRANCH_NAME" | cut -d '/' -f 1)"
 
 # Default branches to skip (excluded branches)
-BRANCHES_TO_SKIP=("master" "preproduction")
+BRANCHES_TO_SKIP=("preproduction")
 
 # Default allowed branch types
 ALLOWED_BRANCHES=("epic" "feature" "bugfix" "hotfix")
