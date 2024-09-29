@@ -10,5 +10,5 @@ if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
   echo "-"
   echo "Push is not allowed on excluded branch: $BRANCH_NAME"
   echo "-"
-  exit 0
+  exit 1
 fi
