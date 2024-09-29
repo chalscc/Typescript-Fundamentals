@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$(dirname "$0")/constants"
+
 # Function to check if the branch is in a list
 is_branch_in_list() {
   local branch="$1"
@@ -14,15 +16,6 @@ is_branch_in_list() {
   return 1  # Not found in the list
 }
 
-# Get the current branch name
-BRANCH_NAME="$(git symbolic-ref --short HEAD)"
-
-# Default branches to skip (excluded branches)
-BRANCHES_TO_SKIP=("master" "develop" "preproduction")
-
-# Default allowed branch types
-ALLOWED_BRANCHES=("epic" "feature" "bugfix" "hotfix")
-
 # Check if the branch is in the excluded list
 if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
   echo "-"
@@ -31,13 +24,9 @@ if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
   exit 0
 fi
 
-# Check if the branch is one of the allowed types (e.g. feature/ or bugfix/)
-BRANCH_TYPE="$(echo "$BRANCH_NAME" | cut -d '/' -f 1)"
-
 if ! is_branch_in_list "$BRANCH_TYPE" "${ALLOWED_BRANCHES[@]}"; then
   echo "Invalid branch type: $BRANCH_TYPE. Must be one of: ${ALLOWED_BRANCHES[*]}"
   exit 0
 fi
 
 npm run test
-#

@@ -1,12 +1,8 @@
 #!/bin/bash
 
+source "$(dirname "$0")/constants"
+
 COMMIT_MSG_FILE="${1}"
-
-# Get the current branch name
-BRANCH_NAME="$(git symbolic-ref --short HEAD)"
-
-# Extract TEST-<number> pattern from the branch name, if exists
-BRANCH_ID="$(echo "$BRANCH_NAME" | sed -n 's/.*\(TEST-[0-9]\+\).*/[\1]/p')"
 
 # Ensure BRANCH_ID is not empty
 if [ -z "$BRANCH_ID" ]; then

@@ -1,15 +1,16 @@
 #!/bin/bash
 
-message="$(cat $1)"
-requiredPattern="^\[TEST-[0-9]+\] .*$"
+source "$(dirname "$0")/constants"
 
-if ! [[ $message =~ $requiredPattern ]];
+MESSAGE="$(cat $1)"
+
+if ! [[ $MESSAGE =~ $REQUIRED_COMMIT_PATTERN ]];
 then
   echo "-"
   echo "The commit message must have the following format: [TEST-{number}] Implementation message"
   echo "-"
   echo "Your commit message was:"
-  echo $message
+  echo $MESSAGE
   echo "-"
   exit 1
 fi
