@@ -3,8 +3,6 @@
 source "$(dirname "$0")/constants"
 source "$(dirname "$0")/functions"
 
-protected_branch='master'
-
 # Check if the branch is in the excluded list
 if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
   echo "-"
