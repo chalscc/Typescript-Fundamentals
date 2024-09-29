@@ -1,20 +1,7 @@
 #!/bin/bash
 
 source "$(dirname "$0")/constants"
-
-# Function to check if the branch is in a list
-is_branch_in_list() {
-  local branch="$1"
-  local branch_list=("${@:2}")
-  
-  for b in "${branch_list[@]}"; do
-    if [[ "$branch" == "$b" ]]; then
-      return 0  # Found in the list
-    fi
-  done
-  
-  return 1  # Not found in the list
-}
+source "$(dirname "$0")/functions"
 
 # Check if the branch is in the excluded list
 if is_branch_in_list "$BRANCH_NAME" "${BRANCHES_TO_SKIP[@]}"; then
